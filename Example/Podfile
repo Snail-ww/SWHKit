@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '10.0'
+
+target 'SWHKit_Example' do
+  pod 'SWHKit', :path => '../'
+
+  target 'SWHKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
