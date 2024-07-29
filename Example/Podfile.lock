@@ -1,0 +1,29 @@
+PODS:
+  - Masonry (1.1.0)
+  - SWHKit (1.0.0):
+    - Masonry (~> 1.1.0)
+    - YYKit (~> 1.0.9)
+  - YYKit (1.0.9):
+    - YYKit/no-arc (= 1.0.9)
+  - YYKit/no-arc (1.0.9)
+
+DEPENDENCIES:
+  - SWHKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - Masonry
+    - YYKit
+
+EXTERNAL SOURCES:
+  SWHKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
+  SWHKit: e46ebce329ce9fcb9cc0d6d53efd65d00d91d9cf
+  YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
+
+PODFILE CHECKSUM: 81876c26d0ac8a0723a28a08731feedd1c09c4f9
+
+COCOAPODS: 1.12.1

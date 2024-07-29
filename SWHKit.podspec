@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SWHKit'
-  s.version          = '0.1.0'
+  s.version          = '1.0.0'
   s.summary          = 'A short description of SWHKit.'
 
 # This description is used to generate tags and improve search results.
@@ -21,22 +21,23 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/reddream520/SWHKit'
+  s.homepage         = 'https://github.com/Snail-ww/SWHKit'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'reddream520' => '1959049240@qq.com' }
-  s.source           = { :git => 'https://github.com/reddream520/SWHKit.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/Snail-ww/SWHKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
   s.ios.deployment_target = '10.0'
 
   s.source_files = 'SWHKit/Classes/**/*'
   
-  # s.resource_bundles = {
-  #   'SWHKit' => ['SWHKit/Assets/*.png']
-  # }
+  s.resource_bundles = {
+    'SWHKit' => ['SWHKit/Assets/**/*']
+  }
 
-  # s.public_header_files = 'Pod/Classes/**/*.h'
+  s.public_header_files = 'Pod/Classes/SWHKit.h'
   # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
+    s.dependency 'Masonry', '~> 1.1.0'
+    s.dependency 'YYKit', '~> 1.0.9'
 end
