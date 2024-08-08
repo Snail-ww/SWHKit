@@ -1,6 +1,6 @@
 PODS:
   - Masonry (1.1.0)
-  - SWHKit (1.0.0):
+  - SWHKit (1.0.2):
     - Masonry (~> 1.1.0)
     - YYKit (~> 1.0.9)
   - YYKit (1.0.9):
@@ -21,7 +21,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
-  SWHKit: 5a726486c6911eff6ddba2e1f0fbada94437726c
+  SWHKit: 6c6185692b82e68b10e436b27c8404aea085a94b
   YYKit: 7cda43304a8dc3696c449041e2cb3107b4e236e7
 
 PODFILE CHECKSUM: 81876c26d0ac8a0723a28a08731feedd1c09c4f9

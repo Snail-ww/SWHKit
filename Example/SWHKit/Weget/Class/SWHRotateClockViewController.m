@@ -1,30 +1,29 @@
 //
-//  SWHStarViewController.m
+//  SWHRotateClockViewController.m
 //  SWHKit_Example
 //
 //  Created by snail on 2024/8/8.
 //  Copyright © 2024 reddream520. All rights reserved.
 //
 
-#import "SWHStarViewController.h"
-#import "SWHStarView.h"
+#import "SWHRotateClockViewController.h"
+#import "SWHKit.h"
 
-@interface SWHStarViewController ()
+@interface SWHRotateClockViewController ()
 
 @end
 
-@implementation SWHStarViewController
+@implementation SWHRotateClockViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    SWHStarView *starView = [[SWHStarView alloc]initWithStarSize:CGSizeMake(30, 30) starCount:6 style:SWHStarTypeFloat];
-    [self.view addSubview:starView];
-    [starView mas_makeConstraints:^(MASConstraintMaker *make) {
+    SWHRotateClockView *clockView = [[SWHRotateClockView alloc]initWithTimeInterval:10000];
+    [self.view addSubview:clockView];
+    [clockView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.centerX.offset(0);
         make.centerY.offset(0);
-        make.width.mas_equalTo(200);
-        make.height.mas_equalTo(30);
     }];
+    // Do any additional setup after loading the view from its nib.
 }
 
 /*

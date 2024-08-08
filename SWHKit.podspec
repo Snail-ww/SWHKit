@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'SWHKit'
-  s.version          = '1.0.1'
+  s.version          = '1.0.2'
   s.summary          = 'A short description of SWHKit.'
 
 # This description is used to generate tags and improve search results.
@@ -33,7 +33,7 @@ TODO: Add long description of the pod here.
   s.source_files = 'SWHKit/Classes/**/*'
   
   s.resource_bundles = {
-    'SWHKit' => ['SWHKit/Assets/**/*']
+    'SWHKit' => ['SWHKit/Assets/*']
   }
 
   s.public_header_files = 'Pod/Classes/SWHKit.h'

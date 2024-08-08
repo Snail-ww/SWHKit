@@ -24,6 +24,9 @@
         @{
             @"title":@"SWHStarView",
             @"class":@"SWHStarViewController",
+        },@{
+            @"title":@"SWHRotateClockView",
+            @"class":@"SWHRotateClockViewController",
         }
     ];
     // Uncomment the following line to preserve selection between presentations.

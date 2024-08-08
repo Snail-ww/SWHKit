@@ -8,11 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		07053A3C2C576C61009D1183 /* SWHStarView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07053A3A2C576C61009D1183 /* SWHStarView.m */; };
-		07053A3F2C577E76009D1183 /* Trainee-Host@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 07053A3E2C577E76009D1183 /* Trainee-Host@3x.png */; };
 		078BD8482C6385C70091A779 /* images.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 078BD8472C6385C70091A779 /* images.bundle */; };
 		078BD84C2C6464AB0091A779 /* SWHStarViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078BD84B2C6464AB0091A779 /* SWHStarViewController.xib */; };
 		078BD84D2C6464AB0091A779 /* SWHStarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078BD84A2C6464AB0091A779 /* SWHStarViewController.m */; };
 		078BD8502C6467E50091A779 /* SWHWegetController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078BD84F2C6467E50091A779 /* SWHWegetController.m */; };
+		078BD8542C6498520091A779 /* SWHRotateClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 078BD8522C6498520091A779 /* SWHRotateClockView.m */; };
+		078BD85A2C64A2BF0091A779 /* SWHRotateClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 078BD8582C64A2BF0091A779 /* SWHRotateClockViewController.m */; };
+		078BD85B2C64A2BF0091A779 /* SWHRotateClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 078BD8592C64A2BF0091A779 /* SWHRotateClockViewController.xib */; };
 		439C586631C1D8F145755DA0 /* Pods_SWHKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 886666462C766A8C79EBF11D /* Pods_SWHKit_Tests.framework */; };
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
@@ -46,13 +48,17 @@
 		07053A392C576C61009D1183 /* SWHStarView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHStarView.h; sourceTree = "<group>"; };
 		07053A3A2C576C61009D1183 /* SWHStarView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHStarView.m; sourceTree = "<group>"; };
 		07053A3D2C5779B3009D1183 /* SWHKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWHKit.h; sourceTree = "<group>"; };
-		07053A3E2C577E76009D1183 /* Trainee-Host@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Trainee-Host@3x.png"; sourceTree = "<group>"; };
 		078BD8472C6385C70091A779 /* images.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = images.bundle; sourceTree = "<group>"; };
 		078BD8492C6464AB0091A779 /* SWHStarViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWHStarViewController.h; sourceTree = "<group>"; };
 		078BD84A2C6464AB0091A779 /* SWHStarViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWHStarViewController.m; sourceTree = "<group>"; };
 		078BD84B2C6464AB0091A779 /* SWHStarViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWHStarViewController.xib; sourceTree = "<group>"; };
 		078BD84E2C6467E50091A779 /* SWHWegetController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWHWegetController.h; sourceTree = "<group>"; };
 		078BD84F2C6467E50091A779 /* SWHWegetController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWHWegetController.m; sourceTree = "<group>"; };
+		078BD8512C6498520091A779 /* SWHRotateClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWHRotateClockView.h; sourceTree = "<group>"; };
+		078BD8522C6498520091A779 /* SWHRotateClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SWHRotateClockView.m; sourceTree = "<group>"; };
+		078BD8572C64A2BF0091A779 /* SWHRotateClockViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SWHRotateClockViewController.h; sourceTree = "<group>"; };
+		078BD8582C64A2BF0091A779 /* SWHRotateClockViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SWHRotateClockViewController.m; sourceTree = "<group>"; };
+		078BD8592C64A2BF0091A779 /* SWHRotateClockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SWHRotateClockViewController.xib; sourceTree = "<group>"; };
 		1569D963ECA84971D24B7E66 /* Pods-SWHKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWHKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-SWHKit_Tests/Pods-SWHKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		50911EE2D528E7D238EE658D /* SWHKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SWHKit.podspec; path = ../SWHKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		5CADDC6A05D4C11BEE8DA509 /* Pods-SWHKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SWHKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-SWHKit_Tests/Pods-SWHKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -114,7 +120,6 @@
 		07053A312C5738FD009D1183 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
-				07053A3E2C577E76009D1183 /* Trainee-Host@3x.png */,
 				078BD8472C6385C70091A779 /* images.bundle */,
 			);
 			path = Assets;
@@ -123,6 +128,7 @@
 		07053A342C5738FD009D1183 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				078BD8532C6498520091A779 /* SWHRotateClock */,
 				07053A3B2C576C61009D1183 /* SWHStar */,
 				07053A3D2C5779B3009D1183 /* SWHKit.h */,
 			);
@@ -146,6 +152,38 @@
 				07053A3A2C576C61009D1183 /* SWHStarView.m */,
 			);
 			path = SWHStar;
+			sourceTree = "<group>";
+		};
+		078BD8532C6498520091A779 /* SWHRotateClock */ = {
+			isa = PBXGroup;
+			children = (
+				078BD8512C6498520091A779 /* SWHRotateClockView.h */,
+				078BD8522C6498520091A779 /* SWHRotateClockView.m */,
+			);
+			path = SWHRotateClock;
+			sourceTree = "<group>";
+		};
+		078BD8552C649F390091A779 /* Weget */ = {
+			isa = PBXGroup;
+			children = (
+				078BD84E2C6467E50091A779 /* SWHWegetController.h */,
+				078BD84F2C6467E50091A779 /* SWHWegetController.m */,
+				078BD8562C649F5D0091A779 /* Class */,
+			);
+			path = Weget;
+			sourceTree = "<group>";
+		};
+		078BD8562C649F5D0091A779 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				078BD8492C6464AB0091A779 /* SWHStarViewController.h */,
+				078BD84A2C6464AB0091A779 /* SWHStarViewController.m */,
+				078BD84B2C6464AB0091A779 /* SWHStarViewController.xib */,
+				078BD8572C64A2BF0091A779 /* SWHRotateClockViewController.h */,
+				078BD8582C64A2BF0091A779 /* SWHRotateClockViewController.m */,
+				078BD8592C64A2BF0091A779 /* SWHRotateClockViewController.xib */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 		6003F581195388D10070C39A = {
@@ -191,11 +229,7 @@
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
 				6003F5A5195388D20070C39A /* SWHViewController.h */,
 				6003F5A6195388D20070C39A /* SWHViewController.m */,
-				078BD84E2C6467E50091A779 /* SWHWegetController.h */,
-				078BD84F2C6467E50091A779 /* SWHWegetController.m */,
-				078BD8492C6464AB0091A779 /* SWHStarViewController.h */,
-				078BD84A2C6464AB0091A779 /* SWHStarViewController.m */,
-				078BD84B2C6464AB0091A779 /* SWHStarViewController.xib */,
+				078BD8552C649F390091A779 /* Weget */,
 				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
 				6003F5A8195388D20070C39A /* Images.xcassets */,
 				6003F594195388D20070C39A /* Supporting Files */,
@@ -339,13 +373,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07053A3F2C577E76009D1183 /* Trainee-Host@3x.png in Resources */,
 				078BD8482C6385C70091A779 /* images.bundle in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				078BD84C2C6464AB0091A779 /* SWHStarViewController.xib in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
 				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
+				078BD85B2C64A2BF0091A779 /* SWHRotateClockViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -438,6 +472,8 @@
 				6003F5A7195388D20070C39A /* SWHViewController.m in Sources */,
 				078BD8502C6467E50091A779 /* SWHWegetController.m in Sources */,
 				07053A3C2C576C61009D1183 /* SWHStarView.m in Sources */,
+				078BD85A2C64A2BF0091A779 /* SWHRotateClockViewController.m in Sources */,
+				078BD8542C6498520091A779 /* SWHRotateClockView.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

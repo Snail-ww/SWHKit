@@ -9,5 +9,8 @@
 #ifndef SWHKit_h
 #define SWHKit_h
 
+#import "SWHStarView.h"
+#import "SWHRotateClockView.h"
+
 
 #endif /* SWHKit_h */

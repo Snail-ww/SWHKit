@@ -21,7 +21,7 @@ typedef NS_ENUM(NSInteger, SWHStarType) {
 
 
 ///回调
-@property(nonatomic,copy)void(^starBlock)(NSString *value);
+@property(nonatomic,copy)void(^starBlock)(CGFloat value);
 
 ///最多星数，默认5
 @property(nonatomic,assign)NSInteger starCount;
