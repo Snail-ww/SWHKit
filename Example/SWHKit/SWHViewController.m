@@ -7,6 +7,7 @@
 //
 
 #import "SWHViewController.h"
+#import "SWHWegetController.h"
 
 @interface SWHViewController ()
 
@@ -17,7 +18,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+    self.title = @"SWHKit";
 	// Do any additional setup after loading the view, typically from a nib.
+}
+- (IBAction)wegetClickAction:(UIButton *)sender {
+    SWHWegetController *vc = [[SWHWegetController alloc]init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (void)didReceiveMemoryWarning

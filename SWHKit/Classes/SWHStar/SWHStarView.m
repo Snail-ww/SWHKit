@@ -33,13 +33,22 @@
 @implementation SWHStarView
 
 
-- (instancetype)initWithFrame:(CGRect)frame starSize:(CGSize)starSize withStyle:(SWHStarType)style
+- (instancetype)initWithStarSize:(CGSize)starSize
+                       starCount:(NSInteger)starCount
+                           style:(SWHStarType)style
 {
-    if (self = [super initWithFrame:frame])
+    if (self = [super init])
     {
-        self.starType = style;
-        self.starSize = starSize;
-        self.isTouch = YES;
+        self.bounds = CGRectMake(0, 0, starSize.width *starCount *2, starSize.height);
+        _starCount = starCount;
+        _starType = style;
+        _starSize = starSize;
+        _isTouch = YES;
+        NSString * bundlePath = [[ NSBundle mainBundle] pathForResource: @"images"ofType :@"bundle"];
+
+        NSBundle *resourceBundle = [NSBundle bundleWithPath:bundlePath];
+        _starImage = [UIImage imageNamed:@"w_star_hollow" inBundle:resourceBundle compatibleWithTraitCollection:nil];
+        _starHighlightImage = [UIImage imageNamed:@"w_star_solid" inBundle:resourceBundle compatibleWithTraitCollection:nil];
         [self initView];
     }
     return self;
@@ -49,106 +58,44 @@
 - (void)initView
 {
     self.starArray      = [NSMutableArray array];
-    CGFloat width;
-    CGFloat height;
-    CGFloat lineMargin;
-    CGFloat listMargin;
-    if(self.starSize.width == 0 || self.starSize.width > self.frame.size.width / 5.0)
-    {
-        width = self.frame.size.width / 8.0;
-        if (width > self.frame.size.height)
-        {
-            width = self.frame.size.height;
-        }
-        height = width;
-        lineMargin = MAX(0, (self.frame.size.height - height) / 2.0);
-        listMargin = (self.frame.size.width - 5.0 * width) / 5.0;
+    CGFloat speacing = (self.frame.size.width -self.starCount *self.starSize.width)/self.starCount;
+    for (int i =0; i<self.starCount; i++) {
+        UIImageView *starImageView = [[UIImageView alloc]initWithImage:self.starImage];
+        starImageView.frame = CGRectMake(speacing/2 +i*(speacing +self.starSize.width), (self.frame.size.height-self.starSize.height)/2.0, self.starSize.width, self.starSize.height);
+        starImageView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        [self addSubview:starImageView];
+        UIView *starHighlightView = [[UIView alloc]initWithFrame:CGRectMake(speacing/2 +i*(speacing +self.starSize.width), (self.frame.size.height-self.starSize.height)/2.0, 0, self.starSize.height)];
+        starHighlightView.tag = 1000+i;
+        starHighlightView.layer.masksToBounds = YES;
+        starHighlightView.backgroundColor = [UIColor clearColor];
+        starHighlightView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin|UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
+        [self addSubview:starHighlightView];
+        UIImageView *starHighlightImageView = [[UIImageView alloc]initWithImage:self.starHighlightImage];
+        starHighlightImageView.frame = CGRectMake(0, 0, self.starSize.width, self.starSize.height);
+        [starHighlightView addSubview:starHighlightImageView];
     }
-    else
-    {
-        width = self.starSize.width;
-        if (width > self.frame.size.height)
-        {
-            width = self.frame.size.height;
-        }
-
-        height = self.starSize.height > self.frame.size.height ? width : self.starSize.height;
-        lineMargin = MAX((self.frame.size.height - height) / 2.0, 0);
-        listMargin = (self.frame.size.width - width * 5.0) / 5.0;
-    }
-    self.width      = width;
-    self.height     = height;
-    self.lineMargin = lineMargin;
-    self.listMargin = listMargin;
-    if (self.starType == SWHStarTypeInteger)
-    {
-        for (int i = 0; i < 5; i++)
-        {
-            UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:RED_NAME]];
-            imgView.frame = CGRectMake(i * (width + listMargin) + listMargin / 2.0, lineMargin, width, height);
-            [self addSubview:imgView];
-            [self.starArray addObject:imgView];
-        }
-    }
-    else
-    {
-        [self initForFloatStar];
-    }
-
     
-}
-///允许半颗星
-- (void)initForFloatStar
-{
-    self.foreView   = [self createViewWithImageName:RED_NAME withFlag:YES];
-    self.bgView     = [self createViewWithImageName:WHITE_NAME withFlag:NO];
-    [self addSubview:self.bgView];
-    [self addSubview:self.foreView];
-}
-- (UIView *)createViewWithImageName:(NSString *)name withFlag:(BOOL)flag
-{
-    UIView *view = [[UIView alloc]initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
-    view.layer.masksToBounds = YES;
-    view.backgroundColor = [UIColor clearColor];
-    for (int i = 0; i < 5; i++)
-    {
-        UIImageView *imgView = [[UIImageView alloc]initWithImage:[UIImage imageNamed:name]];
-        imgView.frame = CGRectMake(i * (self.width + self.listMargin) + self.listMargin / 2.0, self.lineMargin, self.width, self.height);
-        imgView.contentMode = UIViewContentModeScaleAspectFit;
-        [view addSubview:imgView];
-        if (flag)
-        {
-            [self.starArray addObject:imgView];
-        }
-    }
-    return view;
 }
 
 #pragma mark - SET
-- (void)setStar:(CGFloat)star
+- (void)setStarScore:(CGFloat)starScore
 {
-    star = MAX(0, MIN(5.0, star));
-    _star = self.starType == 0 ? (int)star : star;
-    if (self.starType == 0)
-    {
-        _star = _star == 0 ? 1 : _star;
-        [self.starArray enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            UIImageView *img = obj;
-            if (idx + 1 <= star)
-            {
-                img.image = [UIImage imageNamed:RED_NAME];
-            }
-            else
-            {
-                img.image = [UIImage imageNamed:WHITE_NAME];
-            }
-        }];
+    CGFloat score = MAX(0, MIN(self.starCount, starScore));
+    if (self.starType == SWHStarTypeInteger) {
+        score = round(score);
     }
-    else
-    {
-        int value = star;
-        CGFloat width = (value) * (self.width + self.listMargin) + self.listMargin / 2.0 + (star - value) * self.width;
-        self.foreView.frame = CGRectMake(0, 0, width, self.frame.size.height);
+    NSInteger index = 0;
+    for (index =0; index<(int)score; index++) {
+        UIView *starHighlightView = [self viewWithTag:1000 +index];
+        CGRect rect = starHighlightView.frame;
+        rect.size.width = self.starSize.width;
+        starHighlightView.frame = rect;
+    }
+    if (score -index >0) {
+        UIView *starHighlightView = [self viewWithTag:1000 +index +1];
+        CGRect rect = starHighlightView.frame;
+        rect.size.width = self.starSize.width *(score -index);
+        starHighlightView.frame = rect;
     }
 }
 

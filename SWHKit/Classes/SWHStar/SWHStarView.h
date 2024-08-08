@@ -23,21 +23,27 @@ typedef NS_ENUM(NSInteger, SWHStarType) {
 ///回调
 @property(nonatomic,copy)void(^starBlock)(NSString *value);
 
-///星级 0-5(默认5)
-@property(nonatomic,assign)CGFloat star;
-
+///最多星数，默认5
+@property(nonatomic,assign)NSInteger starCount;
+///星级评分，0-starCount(默认5)
+@property(nonatomic,assign)CGFloat starScore;
 ///是否允许触摸改变星级   默认YES
 @property(nonatomic,assign)BOOL isTouch;
+///星星图片
+@property(nonatomic,strong)UIImage *starImage;
+///高亮星星图片
+@property(nonatomic,strong)UIImage *starHighlightImage;
 
 
 /**
  *  构建方法
  *  @param starSize 星星大小（默认为平分，间距是大小的一半）,默认填CGSizeZero
- *  @param style    类型（WTKStarTypeInteger-不允许半颗星）WTKStarTypeInteger下，star最低为1颗星
+ *  @param starCount   最大星数
+ *  @param style    类型（SWHStarTypeInteger-不允许半颗星）SWHStarTypeInteger下，star最低为1颗星
  */
-- (instancetype)initWithFrame:(CGRect)frame
-                     starSize:(CGSize)starSize
-                    withStyle:(SWHStarType)style;
+- (instancetype)initWithStarSize:(CGSize)starSize
+                       starCount:(NSInteger)starCount
+                           style:(SWHStarType)style;
 
 @end
 
